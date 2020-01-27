@@ -1,0 +1,342 @@
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+textarea:focus
+	&::-webkit-input-placeholder
+		color: transparent!important
+	&::-moz-placeholder
+		color: transparent!important
+	&::-ms-input-placeholder
+		color: transparent!important
+input:focus
+	&::-webkit-input-placeholder
+		color: transparent!important
+	&::-moz-placeholder
+		color: transparent!important
+	&::-ms-input-placeholder
+		color: transparent!important
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 20px
+	font-family: 'Roboto', sans-serif
+	overflow-x: hidden
+	color: #2C2F32
+	background: #828282
+
+//MAIN
+.container
+	max-width: 1280px
+	padding:
+		right: $gutter/2
+		left: $gutter/2
+	margin:
+		left: auto
+		right: auto
+
+.header
+	&__inner
+		height: 59px
+		background: linear-gradient(90deg, #00417B 0%, #237CB1 50.26%, #2580B2 52.72%, #46D2CC 100%)
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.159392)
+		display: flex
+	&__menu
+		height: 100%
+	&__add
+		display: flex
+		align-items: center
+		margin-left: 114px
+	&__info
+		display: flex
+		align-items: center
+		margin-left: auto
+		margin-right: 30px
+
+.search
+	width: 179px
+	background: url(../img/rectangle.svg) no-repeat
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 100%
+	&__logo
+		margin-right: 27px
+	&__icon
+		margin-right: 10px
+	&__input
+		input
+			width: 60px
+			border: none
+			&::placeholder
+				color: #2B2B2B
+				opacity: 1
+				font-size: 14px
+				text-transform: uppercase
+
+.menu
+	display: flex
+	align-items: center
+	height: 100%
+	&__list
+		list-style-type: none
+		display: flex
+		padding-left: 56px
+		margin-bottom: 0
+	&__item
+		margin-right: 37px
+	&__link
+		font-size: 14px
+		line-height: 14px
+		color: #fff
+		text-transform: uppercase
+		position: relative
+		&:hover
+			color: #fff
+			text-decoration: none
+			&:after
+				content: ''
+				width: 100%
+				height: 5px
+				background: $accent
+				position: absolute
+				bottom: -19px
+				left: 0
+	&__submenu
+		display: none
+	&__item-has-child
+		position: relative
+		&:before
+			content: ''
+			background: url('../img/arrow.svg') no-repeat
+			background-size: 100%
+			color: #fff
+			position: absolute
+			top: 8px
+			right: -15px
+			width: 10px
+			height: 7px
+
+.plus
+	display: block
+	width: 42px
+	height: 42px
+	border-radius: 100%
+	background: #fff
+	position: relative
+	cursor: pointer
+	&:after
+		content: ''
+		position: absolute
+		top: 19px
+		left: 11px
+		height: 2px
+		width: 20px
+		background: #237cb1
+		border-radius: 90.0877px
+	&:before
+		content: ''
+		position: absolute
+		top: 10px
+		left: 20px
+		height: 20px
+		width: 2px
+		background: #237cb1
+		border-radius: 90.0877px
+
+.bell
+	position: relative
+	margin-right: 53px
+	cursor: pointer
+	&__text
+		position: absolute
+		top: -2px
+		right: -8px
+		background: #E54D4D
+		border: 2px solid #37AEC1
+		width: 15px
+		height: 15px
+		border-radius: 100%
+		font-weight: 500
+		font-size: 10px
+		line-height: 12px
+		color: #fff
+		display: flex
+		align-items: center
+		justify-content: center
+		font-family: 'Fira Sans', sans-serif
+
+.login
+	color: #fff
+	text-transform: uppercase
+	display: flex
+	align-items: center
+	position: relative
+	cursor: pointer
+	&:before
+		content: ''
+		background: url('../img/arrow.svg') no-repeat
+		background-size: 100%
+		color: #fff
+		position: absolute
+		top: 8px
+		right: -15px
+		width: 10px
+		height: 7px
+	img
+		margin-right: 12px
+
+// BILL
+.inner
+	background: #fff
+.bill
+	max-width: 900px
+	margin-left: auto
+	background: #fff
+	box-shadow: -8px 9px 25px rgba(49, 68, 93, 0.23112)
+	&--close
+		cursor: pointer
+	&__header
+		height: 60px
+		background: rgba(0, 0, 0, 0.0289572)
+		font-style: normal
+		font-weight: 300
+		font-size: 24px
+		line-height: 28px
+		display: flex
+		align-items: center
+		padding-left: 32px
+		img
+			margin-right: 27px
+	&__body
+		height: 570px
+		overflow: scroll
+	&__footer
+		height: 60px
+		display: flex
+		justify-content: center
+		align-items: center
+		box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.239102), 0px 0px 15px rgba(0, 0, 0, 0.0869282)
+		a
+			color: #2C2F32
+			&:hover
+				text-decoration: none
+	&__footer-item
+		margin-right: 50px
+		img
+			margin-right: 10px
+
+.price
+	text-align: center
+	margin-top: 26px
+	&__value
+		color: #CF4545
+		font-weight: 300
+		font-size: 46px
+		line-height: 54px
+	&__body
+		font-weight: 300
+		font-size: 16px
+		line-height: 22px
+		span
+			color: #828A96
+	&__btn
+		width: 160px
+		height: 19px
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 125px
+		font-weight: 500
+		font-size: 11px
+		line-height: 13px
+		color: #fff
+		background: $accent
+		margin: 10px auto 0
+		a
+			color: #fff
+			&:hover
+				text-decoration: none
+		span
+			text-transform: uppercase
+
+.note-wrap
+	max-width: 545px
+	margin: 0 auto
+.note
+	width: 100%
+	background: #FFFFFF
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.390682), 0px 3px 10px rgba(0, 0, 0, 0.0869282)
+	height: auto
+	margin: 19px auto 0 auto
+	position: relative
+	padding: 25px 50px 18px 30px
+	display: flex
+	justify-content: space-between
+	&:after
+		content: ''
+		background: url('../img/triang.jpg') no-repeat
+		position: absolute
+		top: -10px
+		right: -7px
+		width: 39px
+		height: 40px
+	&__title
+		font-size: 20px
+		line-height: 23px
+		color: #2C2F32
+	&__bill
+		margin-top: 15px
+		font-weight: 300
+		font-size: 16px
+		line-height: 28px
+		color: #2C2F32
+		p
+			margin-bottom: 0
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 20px	
+	&__item-text
+		margin-right: 15px
+		img
+				width: 90px
+
+
+.goods
+	height: 103px
+	background: #F2F2F2
+	mix-blend-mode: normal
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.239102), 0px 4px 15px rgba(0, 0, 0, 0.0869282), 0px 2px 3px rgba(0, 0, 0, 0.0651891)
+	padding: 23px 24px 20px 30px
+	font-size: 16px
+	line-height: 20px
+	color: #2B2B2B
+.desc
+	margin-top: 20px
+	font-size: 12px
+	line-height: 16px
+	align-items: flex-end
+	color: #808080
